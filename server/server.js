@@ -11,6 +11,7 @@ wss.broadcast = function broadcast(data) {
 wss.on('connection', function connection(ws) {
   console.log('client: %s', 'connected');
   ws.send('connected on container: ' + os.hostname());
+//ws.send('container stats: ' + JSON.stringify(os.cpus(), null, 2));
 
   ws.on('message', function incoming(message) {
     console.log('received: %s', message);
