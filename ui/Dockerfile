@@ -3,7 +3,7 @@ FROM node:5
 WORKDIR /ui
 
 RUN npm install -g nodemon 
-ADD package.json /app/package.json
+ADD package.json /ui/package.json
 
 #RUN npm config set registry http://registry.npmjs.org
 RUN npm install && npm ls

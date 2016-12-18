@@ -15,12 +15,13 @@ services:
 
   ui:
     build: ./ui
-    command: nodemon --debug -L server.js
+    #command: nodemon --debug -L server.js
+    command: node server.js
     volumes:
-      - ./ui:/app
+      - ./ui:/ui
     ports:
       - "3000:3000"
-      - "5959:5858"
+     # - "5959:5858"
     networks:
       - front-tier
       - back-tier      
