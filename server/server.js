@@ -1,5 +1,5 @@
-var WebSocketServer = require('ws').Server
-  , wss = new WebSocketServer({ port: 8080 });
+var WebSocketServer = require('ws').Server, 
+    wss = new WebSocketServer({ port: 8080 });
 
 wss.broadcast = function broadcast(data) {
   wss.clients.forEach(function each(client) {
@@ -13,6 +13,7 @@ wss.on('connection', function connection(ws) {
 
   ws.on('message', function incoming(message) {
     console.log('received: %s', message);
+    
 
     //sende die Nachricht NUR an den sendenden Client
     //ws.send('received:' + message);
