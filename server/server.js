@@ -19,7 +19,7 @@ wss.on('connection', function connection(ws) {
 
     //sende die Nachricht an alle Client
     wss.clients.forEach(function each(client) {
-      client.send('received me from a client:' + message);
+      client.send('received from a client:' + message);
     });
 
   });
