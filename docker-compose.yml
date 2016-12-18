@@ -13,6 +13,18 @@ services:
       - front-tier
       - back-tier
 
+  ui:
+    build: ./ui
+    command: nodemon --debug -L server.js
+    volumes:
+      - ./ui:/app
+    ports:
+      - "3000:3000"
+      - "5959:5858"
+    networks:
+      - front-tier
+      - back-tier      
+
 networks:
     front-tier:
     back-tier:
