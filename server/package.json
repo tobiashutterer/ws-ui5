@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ws": "^1.1.1"
+    "ws": "^1.1.1",
+    "os": "^0.1.1"
   }
 }

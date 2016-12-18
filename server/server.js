@@ -1,4 +1,5 @@
-var WebSocketServer = require('ws').Server, 
+var WebSocketServer = require('ws').Server,
+    os = require('os'),
     wss = new WebSocketServer({ port: 8080 });
 
 wss.broadcast = function broadcast(data) {
@@ -9,7 +10,7 @@ wss.broadcast = function broadcast(data) {
 
 wss.on('connection', function connection(ws) {
   console.log('client: %s', 'connected');
-  ws.send('connected');
+  ws.send('connected on container: ' + os.hostname());
 
   ws.on('message', function incoming(message) {
     console.log('received: %s', message);
@@ -20,7 +21,7 @@ wss.on('connection', function connection(ws) {
 
     //sende die Nachricht an alle Client
     wss.clients.forEach(function each(client) {
-      client.send('received from a client:' + message);
+      client.send('received from a client:' + message);      
     });
 
   });
