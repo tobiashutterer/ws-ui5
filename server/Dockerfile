@@ -14,8 +14,8 @@ EXPOSE 5858
 #For real use
 CMD ["node", "server.js"] 
 
-#For development & debugging & server restart 
+#For development & debugging & server restart without docker-compose 
 #when server sources are mapped into the container
 #CMD ["nodemon", "--debug", "-L", "server.js"]
 
-#C:\wsserver\3>docker run -d -p 8080:8080 -p 5858:5858 -v C:\wsserver\3\:/app/ web-socket:0.3
+
