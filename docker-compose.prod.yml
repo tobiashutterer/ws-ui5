@@ -1,0 +1,18 @@
+version: "2"
+
+services: 
+  server:
+    build: ./server
+  # command: nodemon --debug -L server.js
+    volumes:
+      - ./server:/app
+    ports:
+      - "8080:8080"
+   #  - "5858:5858"
+    networks:
+      - front-tier
+      - back-tier
+
+networks:
+    front-tier:
+    back-tier:
