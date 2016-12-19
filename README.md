@@ -1,6 +1,6 @@
-ws-ui5
+Websocket Server & SAP UI5 chat client
 ======
-A simple dockerized websocket server and a corresponding webapp in SAP UI5
+This simple setup shall demonstrate an opinionated docker setup for a small websocket chat application in SAP UI5
 
 ##For Development & Debugging
 ````bash
@@ -18,6 +18,13 @@ Architecture
 
 * A Node.js (express) webapp as chat client
 * A Node.js (ws) as chat backend server
+
+Debugging
+-----
+The repository includes predefined debugging settings for:
+* Websocket server
+* Client server
+* Chrome Remote Debugging of the SAP UI5 app
 
 Additional
 -----
