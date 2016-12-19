@@ -4,10 +4,19 @@ services:
   server:
     build: ./server
     ports:
-      - "8080:8080"
+      - "4000:4000"
     networks:
       - front-tier
       - back-tier
+  ui:
+    build: ./ui    
+    volumes:
+      - ./ui:/ui
+    ports:
+      - "3000:3000"
+    networks:
+      - front-tier
+      - back-tier      
 
 networks:
     front-tier:
