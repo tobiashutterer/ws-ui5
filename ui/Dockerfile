@@ -14,7 +14,6 @@ ADD /public /ui/public
 
 ENV PORT 3000
 EXPOSE 3000
-EXPOSE 5858 
 
 #For real use
 CMD ["node", "server.js"] 

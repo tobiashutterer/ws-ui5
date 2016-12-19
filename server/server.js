@@ -1,12 +1,7 @@
 var WebSocketServer = require('ws').Server,
     os = require('os'),
-    wss = new WebSocketServer({ port: 8080 });
+    wss = new WebSocketServer({ port: 4000 });
 
-wss.broadcast = function broadcast(data) {
-  wss.clients.forEach(function each(client) {
-    client.send(data);
-  });
-};
 
 wss.on('connection', function connection(ws) {
   console.log('client: %s', 'connected');

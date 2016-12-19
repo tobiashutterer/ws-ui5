@@ -8,3 +8,4 @@ app.use(express.compress());
 app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
 
 app.listen(process.env.PORT || 3000);
+console.log('webserver %s', 'listening on port 3000');

@@ -11,9 +11,8 @@ RUN mv /app/node_modules /node_modules
 
 ADD server.js /app
 
-ENV PORT 8080
-EXPOSE 8080
-EXPOSE 5858 
+ENV PORT 4000
+EXPOSE 4000
 
 #For real use
 CMD ["node", "server.js"] 

@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach server",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}/server",
+            "remoteRoot": "/app",
+            "timeout": 10000
+        },
+        {
+            "name": "Attach client",
+            "type": "node",
+            "request": "attach",
+            "port": 5959,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "outDir": null,
+            "localRoot": "${workspaceRoot}/ui",
+            "remoteRoot": "/ui",
+            "timeout": 10000
+        }
+    ]
+}
