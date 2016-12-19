@@ -1,8 +1,24 @@
 var WebSocketServer = require('ws').Server,
-    os = require('os'),
-    wss = new WebSocketServer({ port: 4000 });
+  os = require('os'),
+  wss = new WebSocketServer({ port: 4000 });
 
 
+wss.broadcast = function (data) {
+  for (var i in this.clients)
+    this.clients[i].send(data);
+  console.log('broadcasted: %s', data);
+};
+
+wss.on('connection', function (ws) {
+  ws.on('message', function (message) {
+    console.log('received: %s', message);
+    wss.broadcast(message);
+  });
+  ws.send(JSON.stringify(
+    { user: 'Server: ', text: 'Welcome to container ' + os.hostname() }
+  ));
+});
+/*
 wss.on('connection', function connection(ws) {
   console.log('client: %s', 'connected');
   ws.send('connected on container: ' + os.hostname());
@@ -25,3 +41,6 @@ wss.on('connection', function connection(ws) {
     console.log('client: %s', 'disconnected');
   });
 });
+*/
+
+
