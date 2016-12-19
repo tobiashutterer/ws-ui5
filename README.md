@@ -21,10 +21,13 @@ Architecture
 
 Debugging
 -----
-The repository includes predefined debugging settings for:
+The repository includes predefined debugging settings for [Visual Studio Code](https://code.visualstudio.com/) :
 * Websocket server
 * Client server
 * Chrome Remote Debugging of the SAP UI5 app
+
+Therefore a '.vscode' debug configuration folder is provided and can be used
+![Debugging Settings](degugging.png)
 
 Additional
 -----
