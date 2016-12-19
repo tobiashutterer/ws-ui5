@@ -27,7 +27,7 @@ The repository includes predefined debugging settings for [Visual Studio Code](h
 * Chrome Remote Debugging of the SAP UI5 app
 
 Therefore a '.vscode' debug configuration folder is provided and can be used
-![Debugging Settings](degugging.png)
+![Debugging Settings](debugging.png)
 
 Additional
 -----
