@@ -26,6 +26,14 @@
             "localRoot": "${workspaceRoot}/ui",
             "remoteRoot": "/ui",
             "timeout": 10000
+        },
+        {
+            "name": "webapp in Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000/index.html",                     
+            "webRoot": "${workspaceRoot}/ui/public",
+            "sourceMaps": true
         }
     ]
 }
