@@ -9,9 +9,7 @@ services:
       - front-tier
       - back-tier
   ui:
-    build: ./ui    
-    volumes:
-      - ./ui:/ui
+    build: ./ui 
     ports:
       - "3000:3000"
     networks:
