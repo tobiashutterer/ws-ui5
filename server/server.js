@@ -15,7 +15,7 @@ wss.on('connection', function (ws) {
     wss.broadcast(message);
   });
   ws.send(JSON.stringify(
-    { user: 'Server: ', text: 'Welcome to container ' + os.hostname() }
+    { user: 'Server: ', text: 'Welcome to my container ' + os.hostname() }
   ));
 });
 /*
