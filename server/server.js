@@ -11,7 +11,7 @@ wss.broadcast = function (data) {
 
 wss.on('connection', function (ws) {
   ws.on('message', function (message) {
-    console.log('received: %s', message);
+    console.log('received Karl: %s', message);
     wss.broadcast(message);
   });
   ws.send(JSON.stringify(
