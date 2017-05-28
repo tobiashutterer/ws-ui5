@@ -24,6 +24,9 @@ services:
     ports:
       - "4000:4000"
       - "5858:5858"
+    depends_on:
+      - "zookeeper"
+      - "kafka"
  
   ui:
     build: ./ui

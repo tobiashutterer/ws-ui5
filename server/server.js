@@ -2,18 +2,17 @@ var WebSocketServer = require('ws').Server;
 var os = require('os');
 var kafka = require('kafka-node');
 
-var client = new kafka.Client('192.168.86.100'),
+
+var client = new kafka.Client('zookeeper'), //finds internal docker-container ip of zookeeper dynamically
   Producer = kafka.Producer;
 
 var producer = new Producer(client);
 
-
 Consumer = kafka.Consumer;
 var consumer = new Consumer(client, [{
-  topic: 'chatmsg'
+  topic: 'chatmsg'  
 }], {
-  autoCommit: false
-
+  autoCommit: false  
 });
 
 consumer.on('message', function (message) {
@@ -21,18 +20,13 @@ consumer.on('message', function (message) {
 });
 
 producer.on('ready', function () {
-
 });
 
 producer.on('error', function (err) {})
 
-
-
 var wss = new WebSocketServer({
   port: 4000
-
 });
-
 
 producer.on('ready', function () {
   console.log('kafka producer is ready')
